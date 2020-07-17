@@ -1,6 +1,6 @@
 name: Audit Preview Deploys
 
-on: [deployment, deployment_status]
+on: [status]
 
 jobs:
   integration:
