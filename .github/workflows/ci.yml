@@ -7,5 +7,13 @@ jobs:
     name: Run integration tests
     runs-on: ubuntu-latest
     steps:
-      - name : 'Log deployment'
-        run: 'echo ${{ github.event }}'
+      - name : 'state'
+        run: 'echo ${{ github.event.state }}'
+      - name : 'description'
+        run: 'echo ${{ github.event.description }}'
+      - name : 'target_url'
+        run: 'echo ${{ github.event.target_url }}'
+      - name : 'name'
+        run: 'echo ${{ github.event.name }}'
+      - name : 'sender.login'
+        run: 'echo ${{ github.event.sender.login }}'
