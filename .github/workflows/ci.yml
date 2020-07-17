@@ -1,19 +1,12 @@
 name: Audit Preview Deploys
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  deployment
 
 jobs:
   integration:
     name: Run integration tests
     runs-on: ubuntu-latest
     steps:
-      - name: 'Get Netlify URL'
-        uses: voorhoede/get-netlify-url@v2
-        id: get-netlify-url
-
-      - name : 'Log retrieved URL'
-        run: 'echo ${{ steps.get-netlify-url.outputs.url }}'
+      - name : 'Log deployment'
+        run: 'echo ${{ event.deployment.url }}'
