@@ -1,0 +1,2 @@
+[build]
+  command = "sleep 30"
